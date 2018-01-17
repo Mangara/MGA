@@ -1,4 +1,4 @@
-package parallelgeneticalgorithm.selection;
+package mga.selection;
 
 import java.util.Comparator;
 import java.util.stream.IntStream;

@@ -1,4 +1,4 @@
-package parallelgeneticalgorithm;
+package mga;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,10 +6,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
-import parallelgeneticalgorithm.crossover.Crossover;
-import parallelgeneticalgorithm.mutation.Mutation;
-import parallelgeneticalgorithm.quality.QualityFunction;
-import parallelgeneticalgorithm.selection.Selection;
+import mga.crossover.Crossover;
+import mga.mutation.Mutation;
+import mga.quality.QualityFunction;
+import mga.selection.Selection;
 
 public class GeneticAlgorithm<T> {
 

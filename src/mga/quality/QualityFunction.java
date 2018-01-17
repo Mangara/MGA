@@ -1,4 +1,4 @@
-package parallelgeneticalgorithm.quality;
+package mga.quality;
 
 public interface QualityFunction<T> {
 

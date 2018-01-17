@@ -1,4 +1,4 @@
-package parallelgeneticalgorithm;
+package mga;
 
 public class Pair<T1,T2> {
 

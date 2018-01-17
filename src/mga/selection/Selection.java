@@ -1,4 +1,4 @@
-package parallelgeneticalgorithm.selection;
+package mga.selection;
 
 public interface Selection {
 

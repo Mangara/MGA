@@ -1,6 +1,6 @@
-package parallelgeneticalgorithm.crossover;
+package mga.crossover;
 
-import parallelgeneticalgorithm.Pair;
+import mga.Pair;
 
 public interface Crossover<T> {
 
