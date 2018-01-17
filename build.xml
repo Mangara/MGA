@@ -10,6 +10,13 @@
 <project name="MGA" default="default" basedir=".">
     <description>Builds, tests, and runs the project MGA.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <!-- Automatically bundle sources, from https://stackoverflow.com/a/857643/2683771 -->
+    <target description="bundle sources in a jar" name="package-sources">
+      <jar basedir="src" destfile="dist/${ant.project.name}-sources.jar"/>
+    </target>
+    <target name="-post-jar" depends="package-sources"/>
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
