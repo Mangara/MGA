@@ -17,6 +17,8 @@ public class GeneticAlgorithm<T> {
     private double crossoverChance = 0.7;
     private double mutationChance = 0.1;
     private double elitistFraction = 0;
+    // Settings
+    private boolean parallelEvaluation = true;
     // Operations
     private final QualityFunction<T> qualityFunction;
     private final Crossover<T> crossover;
@@ -74,6 +76,14 @@ public class GeneticAlgorithm<T> {
 
     public void setElitistFraction(double elitistFraction) {
         this.elitistFraction = elitistFraction;
+    }
+
+    public boolean isParallelEvaluation() {
+        return parallelEvaluation;
+    }
+
+    public void setParallelEvaluation(boolean parallelEvaluation) {
+        this.parallelEvaluation = parallelEvaluation;
     }
 
     public void setDebugLevel(DebugLevel debugLevel) {
@@ -254,7 +264,14 @@ public class GeneticAlgorithm<T> {
      */
     private void computeQualities() {
         qualities = new double[population.size()];
-        Arrays.parallelSetAll(qualities, i -> qualityFunction.computeQuality(population.get(i)));
+        
+        if (parallelEvaluation) {
+            Arrays.parallelSetAll(qualities, i -> qualityFunction.computeQuality(population.get(i)));
+        } else {
+            for (int i = 0; i < population.size(); i++) {
+                qualities[i] = qualityFunction.computeQuality(population.get(i));
+            }
+        }
 
         bestQuality = Double.NEGATIVE_INFINITY;
         best = null;
