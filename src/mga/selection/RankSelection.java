@@ -9,12 +9,21 @@ import java.util.stream.IntStream;
  */
 public class RankSelection extends RouletteSelection {
 
-    private double p = 0.9;
+    private double p;
     private int[] rankToIndividual;
 
+    /**
+     * Creates a new instance with the default p-value of 0.9.
+     */
     public RankSelection() {
+        this(0.9);
     }
 
+    /**
+     * Creates a new instance with the given p-value.
+     *
+     * @param p
+     */
     public RankSelection(double p) {
         this.p = p;
     }
