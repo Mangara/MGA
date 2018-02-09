@@ -4,7 +4,7 @@ A Java library for classic [genetic algorithms](https://en.wikipedia.org/wiki/Ge
 
 ## Getting Started
 
-To use the library, download [MGA.jar](MGA-v1.0.jar) and, optionally, [MGA-sources.jar](MGA-v1.0-sources.jar).
+To use the library, download [MGA.jar](MGA-v1.0.jar) and, optionally, [MGA-sources.jar](MGA-sources-v1.0.jar).
 
 To build the project, open it with a recent version of [NetBeans](https://netbeans.org/).
 
