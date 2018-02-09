@@ -59,8 +59,8 @@ public class RankSelection extends RouletteSelection {
 
         rankToIndividual = IntStream.range(0, n)
                 .parallel()
-                .mapToObj(i -> i) // The IntStream "sorted" method does not support custom Comparators
-                .sorted(Comparator.comparing(i -> qualities[i]))
+                .boxed() // The IntStream "sorted" method does not support custom Comparators
+                .sorted(Comparator.comparing(i -> -qualities[i]))
                 .mapToInt(i -> i)
                 .toArray();
     }
